@@ -1,0 +1,14 @@
+<apex:page controller="myexample_1" >
+    <apex:form >
+    <apex:pageBlock title="ranga">
+       <apex:pageblockbuttons location="top">
+           <apex:commandbutton value="submit"/>
+        </apex:pageblockbuttons> 
+        
+<apex:selectList size="1" value="{!selected}">
+    <apex:selectoptions value="{!options}"/>
+        </apex:selectList> 
+        <apex:outputLabel value="{!selected}"></apex:outputLabel>
+                </apex:pageBlock>
+    </apex:form>
+</apex:page>

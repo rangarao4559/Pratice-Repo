@@ -1,0 +1,39 @@
+<aura:component >
+    <aura:attribute name="recordList" type="object" />
+        <lightning:overlayLibrary aura:id="overlayLib"/>
+    <aura:attribute name="beerId" type="string" />
+    <aura:registerEvent name="addtoCart" type="c:AddtoCart" />
+   <div>
+       <div class="slds-grid slds-wrap">
+              <aura:iteration items="{!v.recordList}" var="aa" indexVar="index">
+               <div class="slds-col slds-size_1-of-4 slds-p-around_small">
+             <lightning:card  title="{!aa.Name}" iconName="standard:contact" >
+                 <p class="slds-p-horizontal_small">
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-size_1-of-3">
+                            <img src="{!$Resource.BeerImage}" />
+                        </div>
+                        <div class="slds-col slds-size_2-of-3">
+                            Id:{!aa.Id} <br/>
+                            Name:{!aa.Name}<br/>
+                            Alcohol%:{!aa.Alcohol__c}
+                            Brewary Name:{!aa.Brewery_Name__c}
+                        </div>
+                         </div>
+                 </p>
+                 <aura:set attribute ="actions" >
+                     <lightning:button name="{!aa.Id}" label="view Details" value="{!aa.Name}" variant="brand" 
+                                       onclick="{!c.showinfo}"/>
+                 
+                 </aura:set>
+                 <aura:set attribute="footer" >
+                  <lightning:button name="{!aa.Id}" label="Add to Cart" value="{!index}" variant="brand" 
+                                       onclick="{!c.AddCart}"/>
+                 </aura:set>
+                   </lightning:card>
+                  </div>    
+           </aura:iteration>
+    </div>
+       
+    </div>
+   </aura:component>

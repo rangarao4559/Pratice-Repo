@@ -1,0 +1,16 @@
+<apex:page controller="soql_example_5">
+    <apex:form >
+        <apex:pageBlock title="Accounts" id="pb">
+        	<apex:pageBlockButtons location="top" dir="RTL">
+        		<apex:commandButton value="Go" action="{!fetchData}" reRender="pb"/>
+                <apex:inputText value="{!ranga}"  size="5" dir="LTR"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!accounts}" var="a">
+                <apex:column value="{!a.name}" />
+                <apex:column value="{!a.industry}" />
+                <apex:column value="{!a.phone}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

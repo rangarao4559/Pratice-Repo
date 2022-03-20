@@ -1,0 +1,19 @@
+<apex:page controller="example_5">
+    <apex:form >
+    <apex:pageBlock title="contact">  
+        <apex:inputtext value="{!input}"/>
+        <apex:commandButton value="select" action="{!create}" />
+        <apex:pageBlockSection >
+        <apex:pageBlockTable value="{!conlist}" var="h">
+                    <apex:column headerValue="caccname" ><apex:inputField value="{!h.accountid}"/></apex:column>
+
+        <apex:column headerValue="clname" ><apex:inputField value="{!h.LastName}"/></apex:column>
+            <apex:column headerValue="cfname" ><apex:inputField value="{!h.FirstName}"/></apex:column>
+            <apex:column headerValue="clsource" ><apex:inputField value="{!h.LeadSource}"/></apex:column><br/><br/>
+                  </apex:pageBlockTable>
+        <apex:commandButton value="save" action="{!add}"/>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    
+    </apex:form>
+</apex:page>

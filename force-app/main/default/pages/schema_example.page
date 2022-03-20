@@ -1,0 +1,10 @@
+<apex:page controller="schema_myexample">
+<apex:form >
+    <apex:pageblock title="lead">
+        <apex:dataTable value="{!fidnames}" var="a" rules="rows" frame="border">
+            <apex:column value="{!a}"/>  
+            <apex:inputcheckbox />
+        </apex:dataTable>
+          </apex:pageblock>
+   </apex:form>
+</apex:page>

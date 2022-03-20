@@ -1,0 +1,86 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:appHostable" controller="AccountController">
+     
+    <!--Declare Attributes-->
+    <aura:attribute name="accList" type="Account[]"/>
+   
+    <!--Declare Handler-->
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+     
+    <!--Component Start-->
+    <div class="slds-m-around--xxx-large">               
+         
+        <lightning:card>
+            <aura:set attribute="title">
+                Accounts-{!v.accList.length}
+            </aura:set>
+            <aura:set attribute="footer">
+              
+            </aura:set>
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                <thead>
+                    <tr class="slds-line-height_reset slds-text-title_caps">
+                        <th  class="slds-is-resizable" scope="col">
+                            <div class="slds-truncate" title="Name">
+                                Name
+                            </div>
+                        </th>
+                        <th  class="slds-is-resizable" scope="col">
+                            <div class="slds-truncate" title="Account Number">
+                                Account Number
+                            </div>
+                        </th>
+                        <th class="slds-is-resizable" scope="col">
+                            <div class="slds-truncate" title="Industry">
+                                Industry
+                            </div>
+                        </th>
+                        <th class="slds-is-resizable" scope="col">
+                            <div class="slds-truncate" title="Phone">
+                                Phone
+                            </div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Actions">Actions</div>
+                        </th>
+                    </tr>
+                </thead>
+                <aura:if isTrue="{!v.accList.length > 0}">
+                    <tbody>
+                        <aura:iteration items="{!v.accList}" var="acc">
+                            <tr class="slds-hint-parent">
+                                 
+                                <th data-label="Name" scope="row">
+                                    <div class="slds-truncate" title="{!acc.Name}">
+                                        {!acc.Name}
+                                    </div>
+                                </th>
+                                <td data-label="Account Number">
+                                    <div class="slds-truncate" title="{!acc.AccountNumber}">{!acc.AccountNumber}</div>
+                                </td>
+                                <td data-label="Industry">
+                                    <div class="slds-truncate" title="{!acc.Industry}">{!acc.Industry}</div>
+                                </td>
+                                <td data-label="Phone">
+                                    <div class="slds-truncate" title="{!acc.Phone}">{!acc.Phone}</div>
+                                </td>
+                                <td data-label="Action">
+                                   <lightning:buttonMenu alternativeText="Show menu">
+                <lightning:menuItem value="{!acc.Id}" label="Edit" />
+                <lightning:menuItem  value="{!acc.Id}" label="delete" />
+ 
+            </lightning:buttonMenu> </td>
+                                 
+                            </tr>
+                        </aura:iteration>
+                    </tbody>
+                </aura:if>
+            </table>
+            <aura:if isTrue="{!empty(v.accList)}">
+                <div class="slds-align_absolute-center">
+                    No records found
+                </div>
+            </aura:if>
+        </lightning:card>
+    </div>
+    <!--Component End-->
+</aura:component>

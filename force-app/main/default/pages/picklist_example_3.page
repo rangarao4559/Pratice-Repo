@@ -1,0 +1,10 @@
+<apex:page controller="picklist_example_3">
+    <apex:form >
+    <apex:selectlist value="{!selected}" size="1">
+        <apex:selectoptions value="{!options}"/>
+        
+        </apex:selectlist>
+        <apex:commandbutton value="go" action="{!call}"/>
+    {!result}
+    </apex:form>
+</apex:page>

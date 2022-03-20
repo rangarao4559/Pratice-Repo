@@ -1,0 +1,33 @@
+<apex:page id="page">
+    <script src="/soap/ajax/44.0/connection.js" type="text/javascript">
+    </script>
+    <script>
+    	function invoke(){
+           sforce.connection.sessionId='{!GETSESSIONID()}';
+           var firstname=document.getElementById('page:fm:name').value;
+           var lastname=document.getElementById('page:fm:phone').value;
+           var company=document.getElementById('page:fm:rating').value;
+            var leadstatus=document.getElementById('page:fm:warm').value;
+		   console.log(name);
+           var le =new sforce.SObject("Lead");
+           le.FirstName=firstname;
+           le.LastName=lastname;
+           le.Company=company;
+            le.Status=leadstatus;
+           console.log(le);
+           var result=sforce.connection.create([le]);
+		   console.log(result);
+           
+           document.getElementById('page:fm:res').innerHTML=''+result;
+           
+        }
+    </script>
+    <apex:form id="fm">
+        Enter FirstName : <apex:inputText id="name" />	<br/><br/>
+        Enter LastName:<apex:inputText id="phone" />	<br/><br/>
+        Enter Company:<apex:inputText id="rating" /><br/><br/>
+        Enter LeadStatus:<apex:inputText id="warm" /><br/>
+        <apex:commandButton value="Submit" oncomplete="invoke()"  /> <br/><br/>
+        <apex:outputLabel id="res" />
+    </apex:form>
+</apex:page>

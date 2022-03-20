@@ -1,0 +1,7 @@
+<aura:component >
+    <aura:attribute name="onclick" type="Aura.Action" />
+    <aura:method name="child" action="{!c.handlechild}" access="public" >
+        <aura:attribute name="param1" type="string" />
+    </aura:method>
+    <lightning:button label="pass the action" value="pass the action" onclick="{!v.onclick}" />
+</aura:component>

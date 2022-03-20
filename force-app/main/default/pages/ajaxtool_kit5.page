@@ -1,0 +1,48 @@
+<apex:page id="page">
+     <script src="/soap/ajax/44.0/connection.js" type="text/javascript">
+    </script>
+    <script>
+    	function show(){
+    		sforce.connection.sessionId='{!GETSESSIONID()}';
+            console.log(sforce.connection.sessionId);
+            var query='select Id,Name,Rating from Account where createdDate=TODAY';
+            var queryResult=sforce.connection.query(query);
+            var records=queryResult.getArray('records');
+            var accounts=[];
+            console.log(records);
+            for(var i=0;i<records.length;i++){
+            	var acc =new sforce.SObject('Account');
+                acc.Id=records[i].Id;
+                acc.Rating='Hot';
+                accounts[i]=acc;
+                console.log(accounts[i]);
+            }
+            var result=sforce.connection.update(accounts);
+            console.log(result);
+            document.getElementById('page:fm:res').innerHTML=''+result;
+    	}
+    	function invoke(){
+        	
+    		sforce.connection.sessionId='{!GETSESSIONID()}';
+            console.log(sforce.connection.sessionId);
+            var query='select Id,Name,Rating from Account where createdDate=TODAY';
+            var queryResult=sforce.connection.query(query);
+            var records=queryResult.getArray('records');
+            var accounts=[];
+            console.log(records);
+            for(var i=0;i<records.length;i++){
+                accounts[i]=records[i].Id;
+                console.log(accounts[i]);
+            }
+            var result=sforce.connection.deleteIds(accounts);
+            console.log(result);
+            document.getElementById('page:fm:res').innerHTML=''+result;
+    	}
+       
+    </script>
+    <apex:form id="fm">
+        <apex:commandButton value="Submit" oncomplete="show()" />
+         <apex:commandButton value="Delete" oncomplete="invoke()" />
+        <apex:outputLabel id="res" />
+    </apex:form>
+</apex:page>

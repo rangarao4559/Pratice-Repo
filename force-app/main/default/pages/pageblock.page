@@ -1,0 +1,14 @@
+<apex:page >
+    <apex:form >
+            <apex:commandbutton value="submit"/>
+        <apex:commandbutton value="cancel" action="/001"/>
+                <apex:commandbutton value="hidden" rendered="false"/>
+            <apex:commandButton value="account" disabled="true"/>
+           <apex:commandbutton value="contact" style="background:yellow; color:red;width:100px;"/>
+        <apex:commandButton value="save" rerender="one"/><br/>
+        <apex:pageBlock title="example" id="one">
+            name:satish<br/>
+            phone: 123
+        </apex:pageBlock>            
+      </apex:form>
+</apex:page>

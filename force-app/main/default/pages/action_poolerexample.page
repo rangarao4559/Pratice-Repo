@@ -1,0 +1,8 @@
+<apex:page controller="action_poolerexample" >
+  
+    <apex:form >
+    	<apex:actionPoller action="{!invoke}" interval="5" reRender="one" status="two"/>
+        <apex:outputLabel value="{!result}" id="one" />
+        <apex:actionStatus startText="Loading..." id="two"> </apex:actionStatus>
+    </apex:form>
+</apex:page>

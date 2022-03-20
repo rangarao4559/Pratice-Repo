@@ -1,0 +1,56 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    my lightning component
+    <p>first component</p>
+<div>lightning component</div>
+    <aura:attribute name="teams" type="list" default="['red','green','yellow','blue']" />
+     <aura:attribute name="truthy" type="boolean" default="false" />
+     <aura:attribute name="age" type="string"  access="public" default="23"/>
+    <aura:attribute name="marksobtained" type="integer"  access="public" />
+        <aura:attribute name="ttmarks" type="integer"  access="public" />
+    <lightning:input type="number" label="enter marksobtained" name="input1" value="{!v.marksobtained}" />
+    <lightning:input type="number" label="enter ttmarks" name="input1" value="{!v.ttmarks}" />
+    {!v.marksobtained}<br/>
+    {!v.ttmarks}<br/>
+    {!mult(div(v.marksobtained,v.ttmarks),100)}<br/>
+    <aura:attribute name="colorarray" type="string[]" access="public" default="['red','blue','yellow']" />
+        <aura:attribute name="colorlist" type="list" access="public" default="['red','blue','yellow']"/>
+     <aura:attribute name="colorset" type="set" access="public" default="['red','blue','yellow']"/>
+       
+    {!v.colorarray[0]}{!v.colorarray[1]}<br/>
+    {!v.colorlist[1]}<br/>
+    {!v.colorset[2]}<br/>
+    {!v.age}<br/>
+   
+    <lightning:input aura:id="test" label="enterno" />
+ <lightning:button label="Download" onclick="{!c.showme}" /> 
+    <aura:attribute name="input1" type="integer" access="public" />
+    <aura:attribute name="input2" type="integer" access="public" />
+     <aura:attribute name="output" type="integer" access="public" />
+    <lightning:input label="input1"  aura:id="input11" value="{!v.input1}"  />
+     <lightning:input label="input2" aura:id="input22"   value="{!v.input2}"  />
+    <lightning:button label="add"  onclick="{!c.add}" />
+    <lightning:button label="sub" onclick="{!c.sub}" />
+    <lightning:button label="multi" onclick="{!c.multi}" />
+    <lightning:button label="div" onclick="{!c.div}" /><br/>
+    the output is :{!v.output}
+    <br/>
+   
+<aura:if isTrue="{!v.truthy}" >
+    True
+    <aura:set attribute="else" >
+        False<br/>
+    
+    </aura:set>
+    
+    </aura:if>
+    <aura:iteration items="{!v.teams}" var="item">
+        {!item}<br/>
+    </aura:iteration>
+    <aura:attribute name="maping" type="list" />
+    <lightning:button label="map" onclick="{!c.domap}" />
+    <aura:iteration items="{!v.maping}" var="maps" >
+        <br/>   key:{!maps.key} value:{!maps.value}<br/>
+    </aura:iteration>
+
+
+</aura:component>

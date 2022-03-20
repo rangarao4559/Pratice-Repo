@@ -1,0 +1,9 @@
+<aura:component >
+    <aura:attribute name="aval" type="decimal" />	
+     <aura:attribute name="bval" type="decimal" />	
+     <aura:attribute name="cval" type="decimal" />	
+    <aura:handler name="init" value="{!this}" action="{!c.show}" />
+    aval:{!v.aval}<br/>
+    bval:{!v.bval} <br/>	
+    cval:{!v.cval}
+</aura:component>

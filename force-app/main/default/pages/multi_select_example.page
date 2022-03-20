@@ -1,0 +1,56 @@
+<apex:page controller="multi_select_example" >
+    <style>
+        .box{
+        width:150px;
+        height:150px;
+    } 
+    </style>
+    <apex:form >
+        <apex:pageblock title="account">
+        <apex:panelGrid columns="3" id="op">
+            <apex:selectlist multiselect="true" value="{!add}" styleclass="box">
+                <apex:selectoptions value="{!leftside}"/>
+            </apex:selectlist>
+<apex:panelgrid columns="1" >
+    <br/><br/>
+    <apex:commandbutton value="add" action="{!addele}"/>
+    <br/><br/>
+    <apex:commandbutton value="dels" action="{!removeele}"/>  
+            </apex:panelgrid>
+            <apex:selectlist multiselect="true" value="{!removed}" styleclass="box">
+                <apex:selectoptions value="{!rightside}"/>
+            </apex:selectlist>
+        
+        </apex:panelGrid>
+    
+        </apex:pageblock>
+    </apex:form>
+        
+    
+    </apex:page>
+<!--<apex:page controller="multi_select_example">
+    <style>
+    	.box{
+        	width:150px;
+        	height:150px;
+        }
+    </style>
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:panelGrid columns="3" id="one">
+            	<apex:selectList multiSelect="true" value="{!add}" styleClass="box">
+                    <apex:selectOptions value="{!leftSide}" />
+                </apex:selectList>
+                <apex:panelGrid columns="1">
+                    <br/><br/>
+                    <apex:commandButton value="Add" action="{!addEle}" reRender="one"/>
+                    <br/><br/>
+                    <apex:commandButton value="Del" action="{!removeEle}" reRender="one"/>
+                </apex:panelGrid>
+                <apex:selectList multiSelect="true" value="{!removed}" styleClass="box">
+                    <apex:selectOptions value="{!rightSide}" />
+                </apex:selectList>
+            </apex:panelGrid>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>-->

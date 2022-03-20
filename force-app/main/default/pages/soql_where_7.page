@@ -1,0 +1,20 @@
+<apex:page controller="soql_where_7">
+    <apex:form >
+    <apex:pageblock title="account" id="po">
+        <apex:pageblockbuttons location="top">
+            <apex:commandbutton value="education" action="{!fetcheducation}" rerender="po"/>
+            <apex:commandbutton value="energy" action="{!fetchenergy}" rerender="po"/>
+        <apex:commandbutton value="ownership" action="{!fetchownership}" rerender="po"/>
+            <apex:inputText value="{!searchtext}"/>
+            <apex:commandbutton value="rating" action="{!search}" rerender="po"/>
+        </apex:pageblockbuttons>
+        <apex:pageblocktable value="{!accounts}" var="a">
+            <apex:column value="{!a.name}"/>
+        <apex:column value="{!a.phone}"/>
+         <apex:column value="{!a.industry}"/>
+         <apex:column value="{!a.rating}"/>
+             <apex:column value="{!a.ownership}"/>
+        </apex:pageblocktable>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,14 @@
+<apex:page controller="action_example">
+   
+    <apex:form id="one">
+    	Enter Name : <apex:inputText value="{!name}" >
+        				<apex:actionSupport event="onchange" action="{!callMe}" reRender="one" />
+        			 </apex:inputText>
+        <br/><br/>
+        Enter Place: <apex:inputText value="{!place}" >
+        				<apex:actionSupport event="onchange" action="{!callMe}" reRender="one" />
+        			 </apex:inputText>
+        <br/><br/>
+        {!result}
+    </apex:form>
+</apex:page>

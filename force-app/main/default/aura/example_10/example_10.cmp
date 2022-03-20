@@ -1,0 +1,25 @@
+<aura:component >
+	<lightning:accordion allowMultipleSectionsOpen="false">
+        <lightning:accordionsection label="account details" name="a" >
+            accountname:<br/>
+            accountindustry:<br/>
+            
+        </lightning:accordionsection>
+           <lightning:accordionsection label="contact details" name="g" >
+            contactname:<br/>
+            contactindustry:<br/>
+            
+        </lightning:accordionsection>
+         <lightning:accordionsection label="opportunity details" name="h" >
+            oppname:<br/>
+            oppindustry:<br/>
+             <lightning:input label="enterage" />
+             <aura:set attribute="actions" >
+                 <lightning:button label="submit" />
+                 <lightning:button label="cancel" />
+             </aura:set>
+            
+        </lightning:accordionsection>
+               </lightning:accordion>
+        
+</aura:component>

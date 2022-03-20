@@ -1,0 +1,12 @@
+<aura:component >
+           <div class="slds-p-around_small" >
+               <lightning:input  name="inline-search-input" 
+                                label="pay search" 
+                                type="search"
+                                variant="label-hidden"
+                                aura:id="search input" 
+                                />
+               
+               
+    </div>
+</aura:component>

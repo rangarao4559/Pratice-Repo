@@ -1,0 +1,20 @@
+<apex:page controller="side_bar_example">
+    <style>
+        .box{
+        padding_left:10px;
+        width:150pox;
+        height:150px;
+        border:1px solid #A9CCE3;
+        border:radius:10px;
+        background:#D3F2F9;
+        }
+    </style>
+    <apex:form >
+        <div class="box">
+            <apex:repeat value="{!leads}" var="a">
+                <apex:commandLink value="{!a.firstname}" action="/{!a.id}"/><br/>
+            </apex:repeat>
+        </div>
+    </apex:form>   
+    
+</apex:page>

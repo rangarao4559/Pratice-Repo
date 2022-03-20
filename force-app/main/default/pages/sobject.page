@@ -1,0 +1,21 @@
+<apex:page controller="sobject_example">
+    <apex:form > 
+        <apex:sectionHeader title="account&contact"/>
+        <apex:pageBlock title="Account">
+        <apex:pageBlockSection title="account">
+            <apex:inputText value="{!acc.Name}"/>
+            <apex:inputText value="{!acc.AnnualRevenue}"/>
+            <apex:inputText value="{!acc.Industry}" />
+            <apex:inputText value="{!acc.Parent}" /> 
+             <apex:inputText value="{!acc.AccountNumber}" />      
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="contact">
+                <apex:inputText value="{!con.FirstName}"/>
+                <apex:inputText value="{!con.LastName}"/>
+                <apex:inputText value="{!con.LeadSource}"/>
+                                </apex:pageBlockSection>
+            </apex:pageBlock>
+    </apex:form>
+  
+    
+</apex:page>

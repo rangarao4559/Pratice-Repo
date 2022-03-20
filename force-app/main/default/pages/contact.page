@@ -1,0 +1,19 @@
+<apex:page standardController="contact" >
+    <apex:form >
+        <apex:sectionHeader title="contact" subtitle="{!contact.firstname+contact.lastname}" help="/apex/page"/>
+        <apex:pageBlock title="{!contact.firstname+contact.lastname}" >
+        <apex:pageBlockButtons location="TOP">
+            <apex:commandButton value="edit" action="{!edit}"/>
+            <apex:commandButton value="save" action="{!save}"/>
+            </apex:pageBlockButtons>
+            <apex:inlineEditSupport >
+                <apex:pageBlocksection >
+                <apex:outputField value="{!contact.lastname}"/>
+                <apex:outputField value="{!contact.firstname}"/>
+                 <apex:outputField value="{!contact.email}"/> 
+                    <apex:outputField value="{!contact.phone}"/>
+                </apex:pageblocksection>
+            </apex:inlineEditSupport>
+        </apex:pageblock> 
+    </apex:form>
+</apex:page>

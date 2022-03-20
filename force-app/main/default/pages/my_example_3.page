@@ -1,0 +1,22 @@
+<apex:page controller="myexample_3" >
+    <apex:form >
+        <apex:pageblock >
+    
+    <apex:panelGrid columns="3">
+        <apex:selectlist multiselect="true" value="{!add}">
+            <apex:selectoptions value="{!leftside}"/>
+         </apex:selectlist>
+        <apex:panelGrid columns="1"> 
+        <apex:commandButton value="add" action="{!addele}"/>
+                                                <br/><br/>
+             <apex:commandButton value="remove" action="{!removeele}"/>                                   
+        </apex:panelGrid>
+            <apex:selectlist multiselect="true" value="{!removed}">
+            <apex:selectoptions value="{!rightside}"/>
+         </apex:selectlist> 
+            
+        </apex:panelGrid>
+    
+       </apex:pageblock>
+    </apex:form>
+</apex:page>

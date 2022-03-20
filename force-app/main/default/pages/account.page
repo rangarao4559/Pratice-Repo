@@ -1,0 +1,18 @@
+<apex:page standardController="Account">
+    <apex:form >
+    	<apex:pageBlock title="Account">
+            <apex:pageBlockbuttons location="top">
+                <apex:commandbutton value="edit" action="{!edit}"/>
+                <apex:commandButton value="save" action="{!save}"/>
+            </apex:pageBlockbuttons>
+        	<apex:pageBlockSection >
+                <apex:outputField value="{!Account.Name}" />
+                <apex:outputField value="{!Account.Phone}" />
+                <apex:outputField value="{!Account.Industry}" />
+                <apex:outputField value="{!Account.Rating}" />
+                <apex:outputField value="{!Account.Ownership}" />
+                <apex:outputField value="{!Account.AnnualRevenue}" />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

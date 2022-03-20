@@ -1,0 +1,21 @@
+<apex:page controller="field_dependency_2" >
+<apex:form >
+        <apex:pageblock title="accounts">
+        <apex:pageBlockSection columns="1" id="po">
+        <apex:pageblocksectionitem >
+            <apex:outputlabel value="states"/>
+            <apex:selectlist size="1" value="{!selected}">
+                <apex:selectoptions value="{!states}"/>
+                <apex:actionsupport event="onchange" action="{!getdata}"  reRender="po"/>
+            </apex:selectlist>
+            </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+            <apex:outputlabel value="cities"/>
+            <apex:selectlist size="1">
+                <apex:selectoptions value="{!cities}" />
+            </apex:selectlist>
+            </apex:pageblocksectionitem>
+            </apex:pageBlockSection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

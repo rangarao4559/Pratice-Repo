@@ -1,0 +1,12 @@
+<apex:page controller="example_1">
+    <apex:form >
+    <apex:pageBlock title="account">
+        <apex:inputText value="{!input}"/>
+        <apex:commandButton value="save" action="{!create}"/>\
+        <apex:pageBlockTable value="{!acc}" var="h">
+            <apex:column value="{!h}"/>
+        </apex:pageBlockTable>
+        
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,27 @@
+<aura:component controller="light_1" implements="flexipage:availableForAllPageTypes">
+	 
+    <aura:attribute name="accounts" type="list" />
+    <ui:button label="click this" press="{!c.myAction}" />
+    <table>
+            <tr><th>Name</th>
+                <th>Industry</th>
+                
+                <th>Contact</th>
+        </tr>
+
+    <aura:iteration items="{!v.accounts}" var="accs1" >
+        <tr>   
+            <td> {!accs1.Name} </td> 
+             <td>{!accs1.Industry}  </td> 
+       <!-- <td>   {!accs1.Contacts.LastName}  </td>--> 
+         
+        <table>
+       <aura:iteration items="{!accs1.Contacts}" var="con1" >
+             <td>{!con1.LastName} </td>
+             <td>{!con1.FirstName} </td>
+            </aura:iteration>
+            </table>
+        </tr>
+     </aura:iteration>                                            
+        </table>
+    </aura:component>

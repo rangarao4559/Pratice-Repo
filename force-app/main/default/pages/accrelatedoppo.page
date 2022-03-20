@@ -1,0 +1,26 @@
+<apex:page standardController="Account" extensions="oppclass">
+   <apex:form >
+       <apex:pageBlock title="Inline Visualforce Page Example">
+           
+           <table border="1px">
+               <tr>
+                   <th>Account Name</th>
+                                  <th>Opp Name</th>
+                                      <th>Stage Name</th>
+                                      <th>Amount</th>
+                   
+               </tr>                    
+               <apex:repeat value="{!oppdata}" var="a" >
+                   <tr>
+                      
+                       <td><apex:inputField value="{! a.Account.name}"/></td>
+                       <td><apex:inputField value="{! a.Name}"/></td>
+                         <td><apex:inputField value="{! a.StageName}" /></td>
+                       <td><apex:inputField value="{! a.Amount}"/></td>
+                   </tr>
+                  
+               </apex:repeat>
+        </table>
+       </apex:pageBlock>
+   </apex:form>
+</apex:page>

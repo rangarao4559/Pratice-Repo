@@ -1,0 +1,35 @@
+<aura:component controller="auraexam" >
+
+    <aura:attribute name="accounts" type="list"  />
+    <aura:handler name="init" value="{!this}" action="{!c.call}" />
+          <div class="box">
+        <lightning:Card title="Account" iconName="standard:account" >
+    <table style="background-color:green">
+        <thead >
+    <tr>
+                <th>NAMES</th>
+         <th>INDUSTRY</th>
+         <th>ID</th>
+            </tr></thead>
+        <aura:iteration items="{!v.accounts}" var="a" >
+           <tr>
+                 
+           <td> {!a.Name}</td>
+        <td>{!a.Industry}</td>
+       <td> {!a.Id}</td>
+          
+        </tr>
+              </aura:iteration>
+          
+     
+         </table>
+             <aura:set attribute="actions" >
+                 <lightning:button label="submit" />
+                 <lightning:button label="cancel" />
+             </aura:set>
+        </lightning:Card>
+              
+    </div>
+   
+     
+               	</aura:component>

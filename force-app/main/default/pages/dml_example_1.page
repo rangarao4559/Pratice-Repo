@@ -1,0 +1,18 @@
+<apex:page controller="dml_example_1">
+    <apex:form >
+        <apex:pageMessages />
+    <apex:pageblock title="account">
+        <apex:pageblockbuttons location="top">
+            <apex:commandbutton value="save" action="{!create}"/>
+            <apex:commandbutton value="cancel" action="{!cancel}"/>
+         </apex:pageblockbuttons>
+        <apex:pageblocksection >
+            <apex:inputfield value="{!acc.name}"/>
+                         <apex:inputfield value="{!acc.industry}"/>              
+            <apex:inputfield value="{!acc.phone}"/>  
+            <apex:inputfield value="{!acc.rating}"/>
+            <apex:inputfield value="{!acc.annualrevenue}"/>     
+        </apex:pageblocksection> 
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

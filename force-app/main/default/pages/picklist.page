@@ -1,0 +1,15 @@
+<apex:page controller="picklist" >
+    <apex:form id="one">
+        
+    <apex:selectList size="1" value="{!selected}">
+        <apex:selectoption itemLabel="--none--" itemvalue="none"/>
+        <apex:selectoption itemLabel="hyd" itemvalue="hyd"/>
+        <apex:selectoption itemLabel="ban" itemvalue="ban"/>
+
+        </apex:selectList>
+         <apex:commandButton value="submit" action="{!call}" rerender="one"/><br/>
+
+        <apex:outputLabel value="{!result}"/>
+    </apex:form>
+   
+</apex:page>

@@ -1,0 +1,30 @@
+<apex:page id="page">
+    <script src="/soap/ajax/44.0/connection.js" type="text/javascript">
+    </script>
+    <script>
+    	function invoke(){
+           sforce.connection.sessionId='{!GETSESSIONID()}';
+           var name=document.getElementById('page:fm:name').value;
+           var phone=document.getElementById('page:fm:phone').value;
+           var rating=document.getElementById('page:fm:rating').value;
+		   console.log(name);
+           var acc =new sforce.SObject("Account");
+           acc.Name=name;
+           acc.Phone=phone;
+           acc.Rating=rating;
+           console.log(acc);
+           var result=sforce.connection.create([acc]);
+		   console.log(result);
+           
+           document.getElementById('page:fm:res').innerHTML=''+result;
+           
+        }
+    </script>
+    <apex:form id="fm">
+        Enter Name : <apex:inputText id="name" />	<br/><br/>
+        Enter Phone:<apex:inputText id="phone" />	<br/><br/>
+        Enter Rating:<apex:inputText id="rating" /><br/><br/>
+        <apex:commandButton value="Submit" oncomplete="invoke()"  /> <br/><br/>
+        <apex:outputLabel id="res" />
+    </apex:form>
+</apex:page>

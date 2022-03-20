@@ -1,0 +1,12 @@
+<aura:component>
+    <aura:attribute name="DayOfTheWeek" type="String" />
+     <aura:handler name="init" value="{!this}" action="{!c.checkWeekdays}"/>
+
+{!v.DayOfTheWeek}
+     
+
+    
+
+    
+     
+</aura:component>

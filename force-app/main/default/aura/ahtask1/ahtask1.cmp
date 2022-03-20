@@ -1,0 +1,26 @@
+<aura:component controller="ahtask1">
+    <aura:attribute name="accounts" type="Account[]" />
+    <aura:attribute name="contact" type="Contact[]" />
+      <aura:attribute name="aco" type="Account[]" />
+    <aura:handler name="init" value="{!this}" action="{!c.callme}" />
+        <c:ahtaskchild con="{!v.aco}" />
+    <table>
+  <tr>
+        <th>Id</th>
+          <th>name</th>
+      <th>conlastname</th>
+      <th>button</th>
+            </tr>
+        <aura:iteration items="{!v.accounts}" var="a" >
+        <tr><td>{!a.Id}</td>
+            <td>{!a.Name}</td>
+            <aura:iteration items="{!a.Contacts}" var="g" >
+                <td>{!g.Name}</td>
+                <td><lightning:button label="click" onclick="{!c.doclick}"></lightning:button></td>
+            </aura:iteration>
+            </tr>
+                </aura:iteration>
+                  </table>
+    <br/>{!v.aco.accounts.Name}
+
+       </aura:component>

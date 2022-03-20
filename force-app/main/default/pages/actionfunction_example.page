@@ -1,0 +1,50 @@
+<apex:page controller="actionfunction_example" id="page"> 
+    <apex:form id="fm">
+    	<apex:pageBlock title="Lead" id="pb">
+            <script>
+               
+            	function show(){
+                    invoke();
+                	var lname=document.getElementById('{!$Component.pbs.pbsi1.lname}').value;
+                    var fname=document.getElementById('{!$Component.pbs.pbsi2.fname}').value;
+                    var company=document.getElementById('{!$Component.pbs.pbsi3.company}').value;
+                    if(lname!='' && fname!='' && company!=''){
+                    	fun(lname,fname,company);
+                    }else{
+                    	if(lname==''){
+                            document.getElementById('{!$Component.pbs.res1}').innerHTML='<font style="color:red">Enter LastName</font>';
+                        }
+                        if(fname==''){
+                        	document.getElementById('{!$Component.pbs.res2}').innerHTML='<font style="color:red">Enter FirstName</font>';
+                        }
+                        if(company==''){
+                        	document.getElementById('{!$Component.pbs.res3}').innerHTML='<font style="color:red">Enter Company</font>';
+                        }
+                    }
+                }
+            </script>
+            <apex:actionFunction name="fun" action="{!create}"  reRender="pb">
+                <apex:param name="lastname" assignTo="{!lastname}" value="" />
+                <apex:param name="firstname" assignTo="{!firstname}" value="" />
+                <apex:param name="company" assignTo="{!company}" value="" />
+            </apex:actionFunction>
+        	<apex:pageBlockSection id="pbs">
+            	<apex:pageBlockSectionItem id="pbsi1">
+                    <apex:outputLabel value="LastName" />
+                    <apex:inputText id="lname"  onchange="show()" />    
+                </apex:pageBlockSectionItem>
+                <apex:outputLabel id="res1" />
+                <apex:pageBlockSectionItem id="pbsi2">
+                    <apex:outputLabel value="FirstName" />
+                    <apex:inputText id="fname" onchange="show()" />
+                </apex:pageBlockSectionItem>
+                 <apex:outputLabel id="res2" />
+                <apex:pageBlockSectionItem id="pbsi3">
+                    <apex:outputLabel value="Company" />
+                    <apex:inputText id="company" onchange="show()" />
+                </apex:pageBlockSectionItem>
+                 <apex:outputLabel id="res3" />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

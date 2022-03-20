@@ -1,0 +1,11 @@
+<aura:component >
+   
+    <aura:attribute name="empName"  type="string" />
+    <aura:attribute name="age"  type="decimal" />
+    <aura:attribute name="salary"  type="decimal" />
+        <div>     
+    empname:{!v.empName}<br/>
+    age:{!v.age}<br/>
+    salary:{!v.salary}
+    </div>
+</aura:component>

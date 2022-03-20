@@ -1,0 +1,11 @@
+<apex:page controller="schemaexample_4" >
+    <apex:form >
+        <apex:dataTable value="{!objectnames}" var="a" rules="rows" cellpadding="5px" frame="border">
+            <apex:column >
+            <apex:facet name="header" > <apex:inputcheckbox /></apex:facet>
+            <apex:inputcheckbox />
+                </apex:column>
+            <apex:column value="{!a}" headervalue="value"/>
+        </apex:dataTable>
+    </apex:form>
+</apex:page>

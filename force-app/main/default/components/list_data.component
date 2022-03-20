@@ -1,0 +1,9 @@
+<apex:component >
+    <apex:attribute name="records" type="Account" description="listofrecords"/>
+    <apex:attribute name="fields" type="string" description="listoffields"/>
+    <apex:dataTable value="{!records}" var="a" width="800" cellpadding="5" rules="rows" frame="border">
+        <apex:repeat value="{!fields}" var="fld">
+            <apex:column value="{!a[fld]}"/>
+        </apex:repeat> 
+    </apex:dataTable>
+</apex:component>

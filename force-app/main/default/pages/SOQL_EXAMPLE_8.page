@@ -1,0 +1,19 @@
+<apex:page controller="SOQL_EXAMPLE_8">
+    <apex:form id="op">
+        <apex:inputtext value="{!searchtext}"/>
+        <apex:commandbutton value="go" action="{!search}" rerender="op"/>
+        <br/>
+        <apex:pageblock title="accounts" id="po" rendered="{! !isnull(accounts)}">
+        <apex:pageblocktable value="{!accounts}"  var="a">
+            <apex:column value="{!a.name}"/>
+             <apex:column value="{!a.phone}"/>
+             <apex:column value="{!a.industry}"/>
+            </apex:pageblocktable>
+        
+        
+        </apex:pageblock>
+    
+    
+    
+    </apex:form>
+</apex:page>

@@ -1,0 +1,9 @@
+<apex:page controller="picklist_example_2" >
+    <apex:form >
+    	<apex:selectList size="1" value="{!selected}" >
+            <apex:selectOptions value="{!options}" />
+        </apex:selectList>
+        <apex:commandButton value="Go" action="{!search}" />
+        {!result}
+    </apex:form>
+</apex:page>

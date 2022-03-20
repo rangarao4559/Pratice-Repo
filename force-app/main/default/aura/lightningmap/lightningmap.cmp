@@ -1,0 +1,15 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global"
+                controller="Allaccounts_mapcontroller">
+  <aura:attribute name="mapMarkers" type="Object"/>
+    <aura:attribute name="zoomLevel" type="Integer" />
+        <aura:handler name="init" value="{!this}" action="{!c.doinit}"/>
+    <aura:if isTrue="{!v.mapMarkers.length>0}" >
+    <div >
+        
+       <lightning:map 
+        mapMarkers="{! v.mapMarkers }" 
+        zoomLevel="{!v.zoomLevel}"
+                          markersTitle="my favourite place for launch"
+                      showFooter="true"/>
+        </div></aura:if>
+</aura:component>

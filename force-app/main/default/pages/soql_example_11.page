@@ -1,0 +1,46 @@
+<apex:page controller="soql_example_11">
+    <apex:form >
+    <apex:tabpanel Switchtype="client" >
+        <apex:tab label="pageblocktable" labelwidth="100">
+            <apex:pageblock title="pageblocktable">
+                <apex:pageblocktable value="{!accounts}" var="l">
+                    <apex:column value="{!l.name}"/>
+                <apex:column value="{!l.industry}"/>
+                    <apex:column value="{!l.rating}"/>
+                    <apex:column value="{!l.phone}"/>
+                </apex:pageblocktable>
+            </apex:pageblock>
+      
+        </apex:tab>
+        <apex:tab label="Datatable" labelwidth="100">
+            <apex:pageblock title="Datatable">
+                <apex:Datatable value="{!accounts}" var="l">
+                    <apex:column value="{!l.name}"/>
+                <apex:column value="{!l.industry}"/>
+                    <apex:column value="{!l.rating}"/>
+                    <apex:column value="{!l.phone}"/>
+                </apex:Datatable>
+            </apex:pageblock>
+        </apex:tab>
+        <apex:tab label="Datalist" labelwidth="100">
+            <apex:pageblock title="Datalist">
+                <apex:Datalist value="{!accounts}" var="l">
+                    {!l.name}
+                    {!l.industry}
+                   {!l.rating}
+                </apex:Datalist>
+            </apex:pageblock>
+        </apex:tab>
+        <apex:tab label="Repeat" labelwidth="100">
+            <apex:pageblock title="Repeat">
+                <apex:Repeat value="{!accounts}" var="l">
+                    {!l.name}
+                    {!l.industry}
+                    {!l.rating}
+                </apex:Repeat>
+            </apex:pageblock>
+      
+        </apex:tab>
+     </apex:tabpanel>
+    </apex:form>
+</apex:page>

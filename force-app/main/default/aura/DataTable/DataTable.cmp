@@ -1,0 +1,18 @@
+<aura:component controller="DataTableAuraServices" >
+    <aura:attribute name="data" type="object" />
+    <aura:attribute name="columns" type="object" />
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}" />
+    <div class="slds-p-around_small">
+         <lightning:datatable
+                              aura:id="accountTable"
+                keyField="id"
+                data="{!v.data }"
+                columns="{!v.columns }"
+                              onrowselection="{!c.selectRecord}" 
+                              onrowaction="{!c.handlerowaction}"
+                              onsave="{!c.handleDraftValues}"
+             />
+    
+    
+    </div>  
+</aura:component>

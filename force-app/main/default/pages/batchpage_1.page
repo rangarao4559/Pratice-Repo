@@ -1,0 +1,10 @@
+<apex:page controller="batchdynamic_2" >
+    
+    <apex:form >
+        query:<apex:inputtext size="100" value="{!query}" /><br/><br/>
+        fiedname:<apex:inputtext value="{!fieldname}" />  <br/><br/>                                                          
+      fiedname:<apex:inputtext value="{!val}" />   
+        <apex:commandButton value="range"  action="{!invoke}" />
+    
+    </apex:form>
+</apex:page>

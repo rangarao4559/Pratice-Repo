@@ -1,0 +1,19 @@
+<apex:page controller="Example3">
+    <apex:form >
+        <apex:pageBlock >
+        <apex:inputtext value="{!noOFRecords}"/>
+            <apex:commandButton value="submit" action="{!create}" />
+            
+            <apex:pageBlock title="Contact">
+            <apex:pageBlockTable value="{!cons}" var="a">
+            <apex:column headerValue="Firstname"><apex:inputField value="{!a.firstname}"/></apex:column>
+                <apex:column headerValue="Lastname"><apex:inputField value="{!a.Lastname}"/></apex:column>
+                <apex:column headerValue="Email"><apex:inputField value="{!a.Email}"/></apex:column>
+                <apex:column headerValue="Title"><apex:inputField value="{!a.Title}"/></apex:column>
+                <apex:column headerValue="AccountId"><apex:inputField value="{!a.AccountId}"/></apex:column>
+            </apex:pageBlockTable>
+            </apex:pageBlock>
+            <apex:commandButton value="save" action="{!save}"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

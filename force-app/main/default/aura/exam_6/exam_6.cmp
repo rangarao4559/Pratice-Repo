@@ -1,0 +1,9 @@
+<aura:component >
+    <lightning:input label="enterName" />
+     <lightning:input label="enterAge" type="number" />
+     <lightning:input label="enterCity" type="text"  variant="label-hidden" />
+    <lightning:input label="active" type="checkbox"  />
+    <lightning:input label="status" type="toggle" />
+    <lightning:input label="enterSalary" type="number" placeholder="enter salary" />
+    
+</aura:component>

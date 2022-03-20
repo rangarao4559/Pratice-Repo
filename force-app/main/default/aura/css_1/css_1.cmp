@@ -1,0 +1,19 @@
+<aura:component >
+	<div> 
+        this is one<br/>
+        this is two<br/>
+        ihis is three<br/>
+    
+    
+    </div>
+    <div class="box">  
+        this is othree<br/>
+        this is four<br/>
+        ihis is three<br/>
+    
+    </div>
+     <div class="redbox"> this is six<br/>
+        this is seven<br/>
+        ihis is three<br/>
+    </div>
+</aura:component>

@@ -1,0 +1,12 @@
+<apex:component >
+    <apex:attribute name="empname" type="string" description="employeename"/>
+    <apex:attribute name="color" type="string" description="colortext"/>
+    <apex:attribute name="bgcolor" type="string" description="background"/>
+    <apex:attribute name="salary" type="string" description="employeename"/>
+    <apex:pageblock title="employee">
+    <div style="background:{!bgcolor}; color:{!color}">
+        name:{!empname}<br/><br/>
+        salary:{!salary}
+        </div>
+    </apex:pageblock>
+</apex:component>

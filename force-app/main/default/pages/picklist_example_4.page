@@ -1,0 +1,9 @@
+<apex:page controller="picklist_example_4" >
+    <apex:form >
+    <apex:selectlist value="{!selected}" multiselect="true" style="width:200px;height:200px" >
+        <apex:selectoptions value="{!options}" />                                                                                                                     
+    </apex:selectlist> 
+        <apex:commandbutton value="submit" rerender="one"/>
+        <apex:outputlabel value="{!selected}" id="one"/>
+    </apex:form>
+</apex:page>

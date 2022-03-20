@@ -1,0 +1,7 @@
+<aura:component >
+    <div >
+        <c:sfdc6 />
+        </div>
+
+	
+</aura:component>

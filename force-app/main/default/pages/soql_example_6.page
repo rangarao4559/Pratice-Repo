@@ -1,0 +1,38 @@
+<apex:page controller="soql_example_6">
+    <apex:form >
+    <apex:pageblock title="ACCOUNTS" id="po">
+        <apex:pageblockbuttons location="top"> 
+           <apex:commandbutton value="fetch" action="{!setoffvalue}" rerender="po"/>
+         start:<apex:inputtext value="{!start}" size="4"/>
+      size:<apex:inputtext value="{!size}" size="4"/>
+         <apex:commandbutton value="go" action="{!fetchdata}" rerender="po"/>
+             <apex:commandbutton value="fetchall" action="{!fetchalldata}" rerender="po"/>
+        </apex:pageblockbuttons>
+        <apex:pageblocktable value="{!accounts}" var="d">
+                <apex:column value="{!d.name}"/>
+        <apex:column value="{!d.phone}"/>
+        <apex:column value="{!d.industry}"/>
+        <apex:column value="{!d.rating}"/>
+        </apex:pageblocktable>
+        </apex:pageblock>
+    </apex:form>  
+</apex:page>
+<!--<apex:page controller="soql_example_6">
+    <apex:form >
+        <apex:pageBlock title="Accounts" id="pb">
+        	<apex:pageBlockButtons location="top" >
+                <apex:commandButton value="Fetch" action="{!setOffValue}" reRender="pb" />
+                Start : <apex:inputText value="{!start}" size="5" />
+                Size  : <apex:inputText value="{!size}" size="5" />
+                <apex:commandButton value="Go" action="{!fetchData}" reRender="pb" />
+                <apex:commandButton value="FetchAll" action="{!fetchAll}" reRender="pb" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!accounts}" var="a">
+                <apex:column value="{!a.name}" />
+                <apex:column value="{!a.industry}" />
+                <apex:column value="{!a.phone}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>-->

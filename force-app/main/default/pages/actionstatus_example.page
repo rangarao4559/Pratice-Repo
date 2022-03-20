@@ -1,0 +1,6 @@
+<apex:page controller="action_statusexample">    
+    <apex:form >
+        <apex:actionStatus startText="Loading..."  id="myStatus" />
+        <apex:commandButton value="Submit" action="{!callMe}" status="myStatus"  />
+    </apex:form>
+</apex:page>

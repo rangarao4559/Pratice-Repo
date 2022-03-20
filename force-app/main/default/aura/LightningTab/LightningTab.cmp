@@ -1,0 +1,56 @@
+<aura:component >
+    <aura:attribute name="accinfo" type="string" />
+    <aura:attribute name="options" type="list" default="['Account','Contact','Case','opportunity']" />
+    <!--<div class="slds-p-around_small"> 
+        <lightning:tabset variant="scoped" selectedTabId="cas" >
+    <lightning:tab label="Account" id="acc" onactive="{!c.handleactive}">
+                   {!v.accinfo}
+    </lightning:tab>
+           <lightning:tab label="Contact" id="con" onactive="{!c.handleactive}">
+                    {!v.accinfo}
+    </lightning:tab>
+           <lightning:tab label="case" id="cas" onactive="{!c.handleactive}">
+                   case info
+    </lightning:tab>
+             <lightning:tab label="Opportunity" id="opp" onactive="{!c.handleactive}">
+                   opportunity info
+    </lightning:tab>
+    </lightning:tabset>
+	</div>
+    
+    
+     <div class="slds-p-around_small"> 
+        <lightning:tabset variant="vertical" selectedTabId="cas" >
+    <lightning:tab label="Account" id="acc" onactive="{!c.handleactive}" >
+                {!v.accinfo}
+    </lightning:tab>
+           <lightning:tab label="Contact" id="con" onactive="{!c.handleactive}">
+              {!v.accinfo}
+    </lightning:tab>
+           <lightning:tab label="case" id="cas" onactive="{!c.handleactive}">
+                   case info
+    </lightning:tab>
+             <lightning:tab label="Opportunity" id="opp" onactive="{!c.handleactive}">
+                   opportunity info
+    </lightning:tab>
+    </lightning:tabset>
+	</div>-->
+    <div class="slds-p-around_small"> 
+        <lightning:tabset variant="scoped" selectedTabId="case" >
+            <aura:iteration items="{!v.options}" var="item" >
+                <aura:if isTrue="{!item=='Account'}">
+                <lightning:tab label="{!item}" onactive="{!c.handleactive}" id="{!item}" > 
+                    {!v.accinfo}
+                </lightning:tab>
+                       <aura:set attribute="else" >
+                 <lightning:tab label="{!item}" onactive="{!c.handleactive}" id="{!item}" > 
+               
+                </lightning:tab>
+                </aura:set>
+                    </aura:if>
+             
+            </aura:iteration>
+        </lightning:tabset>
+    </div>
+	
+</aura:component>

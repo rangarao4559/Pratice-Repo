@@ -1,0 +1,12 @@
+<apex:page >
+    <script>
+    function show(){
+    }
+    function callme(name,age){
+        }
+    function invoke(amount,rate){
+        var intrest=(amount*rate*year)/100;
+        return intrest;
+        }
+    </script>
+</apex:page>

@@ -1,0 +1,44 @@
+<apex:page controller="actionfunction_2" id="page">
+    <apex:form >
+    <apex:pageblock title="account" id="op">
+        <script>
+             function invoke(){
+                	document.getElementById('{!$Component.pbs.res1}').innerHTML='';
+                    document.getElementById('{!$Component.pbs.res2}').innerHTML='';
+                                  }
+               
+            	function show(){
+                    invoke();
+                	var name=document.getElementById('{!$Component.pbs.pbsi1.nname}').value;
+                    var number=document.getElementById('{!$Component.pbs.pbsi2.nnumber}').value;
+                                    if(nname!='' && nnumber!=''){
+                    	fun(name,number);
+                    }else{
+                    	if(nname==''){
+                            document.getElementById('{!$Component.pbs.res1}').innerHTML='<font style="color:red">Enter LastName</font>';
+                        }
+                        if(nnumber==''){
+                        	document.getElementById('{!$Component.pbs.res2}').innerHTML='<font style="color:red">Enter FirstName</font>';
+                        }
+                        }
+                }
+            </script>
+        <apex:actionFunction name="fun" action="{!call}"  reRender="op">
+                <apex:param name="accountname" assignTo="{!accountname}" value="" />
+                <apex:param name="accountnumber" assignTo="{!accountnumber}" value="" />
+                            </apex:actionFunction>
+        <apex:pageBlockSection id="pbs">
+        <apex:pageblocksectionitem id="pbsi1">
+            <apex:outputlabel value="accountname"/>
+            <apex:inputtext id="nname" onchange="call()"/>
+            </apex:pageblocksectionitem>
+            <apex:outputlabel id="res1"/>
+             <apex:pageblocksectionitem id="pbsi2">
+            <apex:outputlabel value="accountnumber"/>
+            <apex:inputtext id="nnumber" onchange="call()"/>
+            </apex:pageblocksectionitem> 
+            <apex:outputlabel id="res2"/>
+                    </apex:pageBlockSection>      
+           </apex:pageblock>
+      </apex:form>
+</apex:page>

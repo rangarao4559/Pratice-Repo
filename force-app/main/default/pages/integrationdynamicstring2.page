@@ -1,0 +1,22 @@
+<apex:page controller="integrationdynamicstring2">
+    <apex:form >
+    <apex:pageBlock title="json example">
+        <apex:pageBlockButtons location="top">
+            <apex:commandButton value="submit" action="{!Create}" reRender="one" />
+        </apex:pageBlockButtons>
+                   <apex:pageBlockSection >
+       <apex:inputText value="{!acc.name}" />
+         <apex:inputText value="{!acc.Phone}" />
+          <apex:inputText value="{!acc.Rating}" />              
+               <apex:inputText value="{!acc.Industry}" />            
+        </apex:pageBlockSection>                                    
+        <apex:outputLabel value="{!result}" id="one" ></apex:outputLabel>
+        
+       
+        
+        
+        
+        </apex:pageBlock>
+    
+    </apex:form>
+</apex:page>

@@ -1,0 +1,12 @@
+<apex:page controller="java_script_4">
+    <script>
+    	function show(name){
+        	alert('MyName:'+name);
+        }
+    </script>
+    <apex:form >
+        <apex:commandButton value="Submit" onclick="show('satish')" />
+        <apex:commandButton value="Cancel" onclick="show('{!$User.FirstName}')" />
+        <apex:commandButton value="Invoke" onclick="show('{!name}')" />
+    </apex:form>
+</apex:page>

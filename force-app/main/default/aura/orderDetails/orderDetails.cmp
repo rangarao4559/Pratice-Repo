@@ -1,0 +1,84 @@
+<aura:component implements="lightning:isUrlAddressable" >
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}" />
+    <aura:attribute name="orderId" type="string" />
+    <aura:attribute name="record" type="object" />
+    <aura:attribute name="orderRecord" type="object" />
+    <aura:attribute name="targetError" type="string" />
+    <force:recordData aura:id="recordViewer"
+                      recordId="{!v.orderId}"
+                      layoutType="FULL"
+                      targetFields="{!v.orderRecord}"
+                      targetRecord="{!v.record}"
+                      targetError="{!v.targetError}" />
+
+    <div class="slds-page-header">
+<div class="slds-page-header__row">
+<div class="slds-page-header__col-title">
+<div class="slds-media">
+<div class="slds-media__figure">
+     <lightning:icon
+            iconName="custom:custom4"
+            size="large"
+            alternative-text="Indicates approval">
+    </lightning:icon>
+
+
+
+</div>
+<div class="slds-media__body">
+<div class="slds-page-header__name">
+<div class="slds-page-header__name-title">
+<h1>
+<span class="slds-page-header__title slds-truncate" title="{!v.orderRecord.Name}">
+   {!v.orderRecord.Name}</span>
+</h1>
+</div>
+</div>
+<p class="slds-page-header__name-meta">
+    {!v.orderRecord.Name}-{!v.orderRecord.CreatedDate}
+    <p>
+         <lightning:formatteddatetime
+                    value="{!v.orderRecord.CreatedDate}"
+                    year="2-digit"
+                    month="short"
+                    day="2-digit"
+                 >
+    </lightning:formatteddatetime>
+    
+    </p>
+    
+    </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+   
+    <div  class="slds-grid slds-gutters">
+    <div class="slds-col slds-size_1-of-2">
+        <span>
+        {!v.orderRecord.Ordered_Quantity__c}
+        </span>
+        
+        
+        </div>
+     <div class="slds-col slds-size_1-of-2">
+        <span>
+             
+            <lightning:formattednumber value="{!v.orderRecord.Order_Amount__c}" 
+                                     style="currency" currencyCode="USD"
+                                       currencyDisplayAs="name"></lightning:formattednumber>
+         </span></div>
+    </div>
+        <div class="slds-p-around_small">
+    
+        <lightning:recordForm 
+                              objectApiName="Beer_Order__c"
+                      recordId="{!v.orderId}"
+                      layoutType="Full"
+                   columns="2"
+                              mode="readonly"/>
+    
+    </div>
+    
+</aura:component>

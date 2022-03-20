@@ -1,0 +1,16 @@
+<apex:page id="page">
+    <apex:form id="fm">
+        <script>
+        	function show(){
+            	var name=document.getElementById('{!$Component.fm.pb.name}').value;
+                var age =document.getElementById('page:fm:pb:age').value;
+                alert(name+'::::'+age);
+            }
+        </script>
+    	<apex:pageBlock title="Employee" id="pb">
+            Enter Name : <apex:inputText id="name" /> <br/><br/>
+            Enter Age  : <apex:inputText id="age" /><br/><br/>
+            <apex:commandButton value="Submit" onclick="show()" />
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

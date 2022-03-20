@@ -1,0 +1,7 @@
+<aura:component >
+    <aura:attribute name="con" type="Contact[]" />
+    ID:{!v.con.Id}<br/>
+    Name:{!v.con.Name}<br/>
+    phone:{!v.con.Phone}
+    
+</aura:component>

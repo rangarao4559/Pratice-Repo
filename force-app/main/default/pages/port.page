@@ -1,0 +1,19 @@
+<apex:page >
+    <apex:form >
+    	<apex:pageBlock title="Employee">
+        	<apex:pageBlockSection title="Basic Info" collapsible="false">
+                
+            	<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Enter Name" />
+                    <apex:inputText />
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Enter Age" />
+                    <apex:inputText />
+                </apex:pageBlockSectionItem>
+
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

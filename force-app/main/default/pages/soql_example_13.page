@@ -1,0 +1,30 @@
+<apex:page controller="soql_example_13">
+    <apex:form id="po">
+        <apex:pageblock title="account">
+            <apex:pageblockbuttons location="top">
+                <apex:inputtext value="{!searchtext}"/>
+                <apex:commandbutton value="go" action="{!search}" rerender="po"/>
+            </apex:pageblockbuttons>
+    <apex:datatable value="{!accounts}" var="a" rules="all" border="box" width="1000px" columnswidth="300px,100px,300px,200px,150px" cellpadding="5px">
+                <apex:column value="{!a.name}" headervalue="account name"/>
+            <apex:column value="{!a.industry}" headervalue="industry"/>
+                <apex:column value="{!a.id}" headervalue="id"/>
+                <apex:column value="{!a.phone}" headervalue="phone"/>
+        <apex:column headervalue="contacts">
+           
+        <apex:datatable value="{!a.contacts}" var="b" rules="all" width="400px" >
+            <apex:column value="{!b.lastname}" headervalue="lastname"/>
+             <apex:column value="{!b.firstname}" headervalue="firstname"/>
+            </apex:datatable>
+           
+        </apex:column>
+    </apex:datatable>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>
+<!--<apex:column headerValue="Contacts">
+            	<apex:dataTable value="{!a.contacts}" var="b" rules="rows" width="200px" >
+                    <apex:column value="{!b.lastName}" />
+                    <apex:column value="{!b.firstName}" />
+                </apex:dataTable>
+            </apex:column>-->

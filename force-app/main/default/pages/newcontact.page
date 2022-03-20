@@ -1,0 +1,43 @@
+<apex:page standardController="Contact" renderAs="PDF"   >
+       <apex:form >
+   <h1 style="font-size:20px">Ketonix Organization</h1>
+       <p>
+           This PDF is regarding feedback purpose of your Product
+             <apex:outputText value="{!Contact.Name}" />
+       </p>
+       <body>
+           <div>
+           <table style="width:100%;;border-collapse:collapse;">
+               <tbody style="display:table-row-group;vertical-align:middle">
+               <tr style="display:table-row">
+                   <th style="font-size:1em;text-align:left;padding-top:5px;padding-bottom:4px;padding: 3px 7px 2px 7px;background-color:#A7C942;">Product</th>
+                   <th style="font-size:1em;text-align:left;padding-top:5px;padding-bottom:4px;padding: 3px 7px 2px 7px;background-color:#A7C942;">Quantity</th>
+                   <th style="font-size:1em;text-align:left;padding-top:5px;padding-bottom:4px;padding: 3px 7px 2px 7px;background-color:#A7C942;">List Price</th>
+                   <th style="font-size:1em;text-align:left;padding-top:5px;padding-bottom:4px;padding: 3px 7px 2px 7px;background-color:#A7C942;">Sales Price</th>
+                   <th style="font-size:1em;text-align:left;padding-top:5px;padding-bottom:4px;padding: 3px 7px 2px 7px;background-color:#A7C942;">Total Price</th>
+                   </tr>
+                   <apex:repeat value="{!Contact}" var="p">
+                   <tr>
+                        <td style="font-size:1em;padding: 3px 7px 2px 7px;border:1px solid #98bf21;border-collapse:collapse;">{!p.Name}</td>
+                        <td style="font-size:1em;padding: 3px 7px 2px 7px;border:1px solid #98bf21;border-collapse:collapse;">{!p.Phone}</td>
+                        <td style="font-size:1em;padding: 3px 7px 2px 7px;border:1px solid #98bf21;border-collapse:collapse;">{!p.Email}</td>
+                        <td style="font-size:1em;padding: 3px 7px 2px 7px;border:1px solid #98bf21;border-collapse:collapse;">{!p.AssistantName}</td>
+                        <td style="font-size:1em;padding: 3px 7px 2px 7px;border:1px solid #98bf21;border-collapse:collapse;">{!p.AssistantPhone}</td>
+                       </tr>
+                   </apex:repeat>
+               </tbody>
+           </table>
+           </div><br/>
+           
+                Prepared by:Ketonix Organization
+       
+           <div>
+               <h6>
+                   Thanks and Regards
+               </h6>
+               <span>Sales Team</span>
+           </div>
+       </body>
+   </apex:form>
+   
+</apex:page>

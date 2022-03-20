@@ -1,0 +1,21 @@
+<apex:page controller="Http_ip_tracing" >
+    <apex:form >
+        
+    <apex:inputText value="{!ipaddress}"/>
+        <apex:commandButton value="search" action="{!trace}" />
+    <apex:pageBlock >
+    <apex:pageBlockTable value="{!resmap}" var="d" >
+        <apex:column value="{!d}" headervalue="property" />
+             <apex:column value="{!resmap[d]}" headervalue="valur" />
+        </apex:pageBlockTable>
+        <br/>
+       
+
+        <br/>
+    <apex:pageBlockTable value="{!xmlmap}" var="g" >
+        <apex:column value="{!g}" headervalue="property" />
+             <apex:column value="{!xmlmap[g]}" headervalue="valur" />
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+         </apex:form>
+</apex:page>

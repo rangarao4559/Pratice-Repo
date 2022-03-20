@@ -1,0 +1,10 @@
+<aura:component >
+    <aura:attribute name="whom" type="string" default="SFDCpanther" />
+    <aura:attribute name="age" type="integer" default="25" />
+    <lightning:input label="age" aura:id="input11" value="{!v.age}" />
+    <lightning:button label="calculate" value="calculate" onclick="{!c.doclick}" />
+    {!v.whom}
+   
+    
+	
+</aura:component>

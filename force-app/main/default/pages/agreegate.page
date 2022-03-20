@@ -1,0 +1,8 @@
+<apex:page controller="aggregate_result">
+    <apex:form id="one">
+        <apex:inputtext value="{!fldName}"/>
+        <apex:commandbutton value="go" action="{!search}"/>
+        <br/><br/>
+    {!result}
+    </apex:form>
+</apex:page>

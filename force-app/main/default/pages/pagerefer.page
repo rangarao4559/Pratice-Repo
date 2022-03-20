@@ -1,0 +1,22 @@
+<apex:page controller="pagereference_exam">
+     <apex:sectionHeader title="Student" subtitle="New Student" help="/apex/page" />
+    <apex:form >
+        <apex:pageMessages />
+        <apex:pageBlock title="student">
+        <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Save" action="{!invoke}" />
+                <apex:commandButton value="Cancel" action="{!cancel}" />
+            </apex:pageBlockButtons>
+        <apex:pageBlocksection >
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="entername" />
+            <apex:inputText value="{!name}"/>
+        </apex:pageBlockSectionItem>
+         <apex:pageBlockSectionItem >
+            <apex:outputLabel value="enterage" />
+            <apex:inputText value="{!age}"/>
+        </apex:pageBlockSectionItem>
+        </apex:pageBlocksection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

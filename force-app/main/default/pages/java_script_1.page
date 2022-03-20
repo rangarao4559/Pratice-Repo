@@ -1,0 +1,7 @@
+<apex:page >
+    <script>
+    var name='satish';
+    var age=33;
+    alert('Name:'+name+':Age:'+age);
+    </script>
+</apex:page>

@@ -1,0 +1,16 @@
+<apex:page controller="Example4" >
+     <apex:form >
+    <apex:pageblock title="Account">
+        <apex:inputtext value="{!noOFRecords}"/>
+        <apex:commandButton value="submit" action="{!create}"/>
+        <apex:pageBlockTable value="{!accs}" var="c" >
+          <apex:column headerValue="Name"><apex:inputField value="{!c.Name}"/></apex:column>
+                <apex:column headerValue="Rating"><apex:inputField value="{!c.Rating}"/></apex:column>
+                <apex:column headerValue="Industry"><apex:inputField value="{!c.Industry}"/></apex:column>
+               <apex:column headerValue="Website"><apex:inputField value="{!c.Website}"/></apex:column>
+                <apex:column headerValue="Fax"><apex:inputField value="{!c.fax}"/></apex:column>    
+        </apex:pageBlockTable>
+        <apex:commandButton value="save" action="{!save}"/>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

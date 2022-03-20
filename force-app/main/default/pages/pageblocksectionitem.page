@@ -1,0 +1,29 @@
+<apex:page >
+    <apex:sectionHeader title="student" subtitle="newstudent" help="/apexpage"/>
+    <apex:form >
+    <apex:pageBlock title="student">
+        <apex:pageBlockbuttons location="top">
+        <apex:commandButton value="save" />
+            <apex:commandbutton value="edit"/>
+        </apex:pageBlockbuttons>
+        <apex:pageBlocksection title="basicinfo" columns="1" >
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="firstName"/>
+            <apex:inputText />
+            </apex:pageBlockSectionItem>
+           <apex:pageBlockSectionItem >
+            <apex:outputLabel value="lastName"/>
+            <apex:inputText />
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+            <apex:outputLabel value="phone"/>
+            <apex:inputText />
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+            <apex:outputLabel value="email"/>
+            <apex:inputText />
+            </apex:pageBlockSectionItem>
+        </apex:pageBlocksection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

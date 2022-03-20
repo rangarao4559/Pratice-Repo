@@ -1,0 +1,15 @@
+<apex:page controller="schemaexample_2">
+<apex:form >
+    <apex:pageblock title="account">
+        <apex:datatable value="{!fieldnames}" var="a" rules="rows" frame="border">
+            <apex:column >
+                <apex:inputCheckbox />
+            </apex:column>
+            <apex:column value="{!a}"/>
+            
+            
+        </apex:datatable>
+    
+          </apex:pageblock>
+   </apex:form>
+</apex:page>

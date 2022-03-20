@@ -1,0 +1,28 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="record" type="object" />
+       <aura:attribute name="recordFields" type="object" />
+           <aura:attribute name="recordError" type="string" />
+    <force:recordData aura:id="recordviewer"
+    recordId="{!v.recordId}"
+    layoutType="FULL" 
+    fields="Name,Description,Phone,Industry"
+       MODE="VIEW"
+   targetRecord="{!V.record}"
+    targetFields="{!v.recordFields}"
+    targetError="{!v.recordError}"
+    />
+	<div>
+      <lightning:card iconName="standard:account" title="{!v.accountRecord.Name}" >
+            <div class="slds-p-horizontal--small">
+                
+                {!v.recordFields.Id}<br/>
+                {!v.recordFields.Name}<br/>
+                {!v.recordFields.Industry}<br/>
+                target tecord<br/>
+                {!v.record.fields.Name.value}<br/>
+                  {!v.record.fields.Id.value}
+    
+          </div>
+        </lightning:card>
+    </div>
+</aura:component>

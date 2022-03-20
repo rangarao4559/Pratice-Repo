@@ -1,0 +1,25 @@
+<aura:component controller="contactlight" >
+    <aura:attribute name="accId" type="string" />
+    <aura:attribute name="ErrorMessage" type="string" />
+    <aura:registerEvent name="quickcontact" type="c:contactlight1event" />
+ <aura:attribute name="createcontact" type="Contact" default="{
+                                                           sobjectName :'contact',
+                                                                  FirstName:'',
+                                                                  LastName:'',
+                                                                  Phone:'',
+                                                                  Email:''
+                                                                  }" />
+    {!v.ErrorMessage}
+    <div class="slds-p-around_x-small" >
+        <lightning:input type="text"  aura:id="contactform" value="{!v.createcontact.FirstName}" label="First Name" 
+                         required="true" />
+         <lightning:input type="text"  aura:id="contactform" value="{!v.createcontact.LastName}" label="Last Name" 
+                          />
+         <lightning:input type="text"  aura:id="contactform" value="{!v.createcontact.Email}" label="Email" 
+                         required="true" />
+         <lightning:input type="text"  aura:id="contactform" value="{!v.createcontact.Phone}" label="Phone" 
+                         required="true" />
+        <lightning:button label="create contact" variant="brand" onclick="{!c.createc}" />
+                                                                         
+    </div>	
+</aura:component>

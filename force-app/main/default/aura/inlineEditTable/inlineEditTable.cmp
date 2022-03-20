@@ -1,0 +1,43 @@
+<aura:component controller="inlineEdit" implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:appHostable">   
+    <!--Init handler which is call initRecords js function on component Load-->  
+    <aura:handler name="init" value="{!this}" action="{!c.initRecords}"/>
+    
+    <!--declare aura attributes-->
+    <aura:attribute name="ContactList" type="Contact[]" />
+    <aura:attribute name="showSaveCancelBtn" type="boolean" default="false" />
+    
+    <div class="slds-m-around_large">
+        
+        
+        <!--Data Table-->     
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+            <thead>
+                <tr class="slds-text-title--caps">
+                    <th scope="col"><div class="slds-truncate" title="Id">S.No</div></th> 
+                    <th scope="col"><div class="slds-truncate" title="Contact Last Name">Contact Last Name</div></th>
+                    <th scope="col"><div class="slds-truncate" title="Contact Email">Contact Email</div></th>
+                    <th scope="col"><div class="slds-truncate" title="Contact Description">Contact Description</div></th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <!--### display all records of ContactList attribute one by one by aura:iteration ###-->
+                <aura:iteration items="{!v.ContactList}" var="acc" indexVar="sNo">
+                    <!-- Child Lightning Component --> 
+                    <c:inlineEditRow singleRec="{!acc}"
+                                     showSaveCancelBtn="{!v.showSaveCancelBtn}"
+                                     sNo="{!sNo + 1}" />
+                </aura:iteration>
+            </tbody>
+        </table>
+        
+        <!-- use aura:if for show/hide buttons --> 
+        <aura:if isTrue="{!v.showSaveCancelBtn}">
+            <!--button for save and cancel Record after Inline Edit-->
+            <lightning:buttonGroup class="slds-m-around_medium">
+                <lightning:button label="Cancel" onclick="{!c.cancel}"/>
+                <lightning:button label="Save" onclick="{!c.Save}" variant="success"/>
+            </lightning:buttonGroup>
+        </aura:if> 
+    </div>
+</aura:component>

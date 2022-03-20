@@ -1,0 +1,6 @@
+<apex:page controller="schemamyexample90" >
+    <apex:form >
+     
+    </apex:form>
+    
+</apex:page>

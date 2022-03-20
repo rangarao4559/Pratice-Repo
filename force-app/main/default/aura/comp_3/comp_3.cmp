@@ -1,0 +1,9 @@
+<aura:component >
+    <aura:attribute name="name" type="string" />
+    <aura:attribute name="age" type="decimal" />
+    <aura:attribute name="city" type="string" />
+    <aura:attribute name="state" type="string" />
+    <c:comp_1 city="{!v.city}" state="{!v.state}" />
+                                                
+    <c:comp_2 name="{!v.name}" age="{!v.age}" />
+</aura:component>

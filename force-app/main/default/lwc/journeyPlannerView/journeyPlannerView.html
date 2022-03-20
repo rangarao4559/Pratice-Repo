@@ -1,0 +1,27 @@
+<template>
+    <div class="journey-planner-template slds-p-top_medium">
+        <div class="journey-planner-header slds-size_1-of-1 slds-grid slds-wrap slds-large-size_1-of-1">
+            <section class="slds-col slds-size--3-of-6 slds-p-left_medium slds-large-size_1-of-6">
+                <div class="slds-form-element__control"> 
+                    <select class="slds-select" label="Year" id="select" value={year}>
+                        <template  for:each={yearOptions11} for:item="yearOption">
+                            <option key={yearOption.value}  value={yearOption.value} >{yearOption.label}</option>
+                        </template>
+                    </select>
+
+
+                    
+                </div></section></div>
+            
+                <div class="slds-form-element__control"> 
+                    <select class="slds-select" label="Year" id="select1">
+                        <template  for:each={monthoptions} for:item="yearOption">
+                            <option key={yearOption.value}  value={yearOption.value} >{yearOption.label}</option>
+                        </template>
+                    </select>
+                </div>
+            
+            
+            
+            </div>
+</template>

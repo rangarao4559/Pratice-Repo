@@ -1,0 +1,15 @@
+<apex:page >
+    <script>
+    function show(){
+        alert('this is show function');
+        }
+    function callme(){
+        alert('this is call me');
+        }
+    </script>
+    <apex:form >
+        <apex:commandbutton value="submit" onclick="show()"/>
+        <apex:inputtext onchange="callme()"/>
+    
+    </apex:form>
+</apex:page>

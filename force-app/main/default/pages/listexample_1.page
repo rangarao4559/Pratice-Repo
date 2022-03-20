@@ -1,0 +1,17 @@
+<apex:page controller="listexample_1">
+    <apex:form >
+    <apex:pageBlock title="listexample">
+        <apex:pageBlockTable value="{!accounts}" var="o">
+            <apex:column value="{!o.name}"/>
+            <apex:column value="{!o.phone}"/>
+        <apex:column value="{!o.industry}"/>
+   
+        </apex:pageBlockTable>
+        
+        
+        
+        
+        </apex:pageBlock>
+    
+    </apex:form>
+</apex:page>

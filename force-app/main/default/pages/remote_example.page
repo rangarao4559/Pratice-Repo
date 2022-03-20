@@ -1,0 +1,13 @@
+<apex:page controller="Remote_example" id="page">
+    <script>
+    	function show(){
+        	Remote_Example.callMe('Satish',function(result,event){
+            	document.getElementById('page:fm:res').innerHTML=result;
+            });
+        }
+    </script>
+    <apex:form id="fm">
+        <apex:commandButton value="Submit" oncomplete="show()" />
+        <apex:outputLabel id="res" />
+    </apex:form>
+</apex:page>

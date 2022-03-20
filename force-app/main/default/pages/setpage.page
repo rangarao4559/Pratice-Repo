@@ -1,0 +1,25 @@
+<apex:page controller="setmethods" >
+    <apex:form >
+    <apex:pageblock title="set">
+        <apex:pageBlockTable value="{!ages}" var="r">
+        <apex:column value="{!r}" />
+        </apex:pageBlockTable>
+        {!result}<br/>
+        {!count}
+        
+        </apex:pageblock>
+        <apex:pageblock title="snames">
+        <apex:pageBlockTable value="{!names}" var="o">
+        <apex:column value="{!o}" />
+        </apex:pageBlockTable>
+        
+        </apex:pageblock>
+         <apex:pageblock title="scities">
+        <apex:pageBlockTable value="{!cities}" var="o">
+        <apex:column value="{!o}" />
+        </apex:pageBlockTable>
+        
+        </apex:pageblock>
+    
+    </apex:form>
+</apex:page>

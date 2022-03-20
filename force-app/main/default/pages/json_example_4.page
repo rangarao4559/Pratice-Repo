@@ -1,0 +1,13 @@
+<apex:page controller="json_example_4" >
+   <apex:pageBlock >
+    <apex:pageBlockTable value="{!result}" var="a">
+       <apex:column value="{!a}" />
+        <apex:column value="{!result[a]}" />
+        
+       
+       </apex:pageBlockTable>
+    
+    
+    </apex:pageBlock>
+   
+</apex:page>

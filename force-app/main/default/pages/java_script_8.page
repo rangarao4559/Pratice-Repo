@@ -1,0 +1,44 @@
+<apex:page id="page">
+    <apex:form id="fm">
+    	<apex:pageBlock title="Calculator" id="pb">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Add" oncomplete="add()" />
+                <apex:commandButton value="Mul" oncomplete="mul()" />
+            </apex:pageBlockButtons>
+            <script>
+            	function add(){
+                	var aval=document.getElementById('{!$Component.pbs.pbsi1.aval}').value;
+                    var bval=document.getElementById('{!$Component.pbs.pbsi2.bval}').value;
+                    var result=parseInt(aval)+parseInt(bval);
+                    document.getElementById('{!$Component.pbs.pbsi3.result}').value=result;
+                    document.getElementById('{!$Component.pbs.pbsi4.res}').innerHTML='<b>'+result+'</b>';
+                }
+            	function mul(){
+                	var aval=document.getElementById('page:fm:pb:pbs:pbsi1:aval').value;
+                    var bval=document.getElementById('page:fm:pb:pbs:pbsi2:bval').value;
+                    var result=parseInt(aval)*parseInt(bval);
+                    document.getElementById('page:fm:pb:pbs:pbsi3:result').value=result;
+                    document.getElementById('page:fm:pb:pbs:pbsi4:res').innerHTML='<b>'+result+'</b>';
+                }
+            </script>
+        	<apex:pageBlockSection id="pbs" columns="1">
+            	<apex:pageBlockSectionItem id="pbsi1">
+                    <apex:outputLabel value="Enter AVal" />
+                    <apex:inputText id="aval" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="pbsi2">
+                    <apex:outputLabel value="Enter BVal" />
+                    <apex:inputText id="bval" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="pbsi3">
+                    <apex:outputLabel value="Result" />
+                    <apex:inputText id="result" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="pbsi4">
+                    <apex:outputLabel value="Result" />
+                    <apex:outputText id="res" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

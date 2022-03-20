@@ -1,0 +1,21 @@
+<apex:page controller="soql_example_12">
+    <apex:form >
+    <apex:pageblock mode="maindetail" id="pbs">
+        <apex:pageblockbuttons location="top">
+            <apex:inputtext value="{!searchtext}"/>
+            <apex:commandbutton value="search" action="{!search}" rerender="pbs"/>
+          </apex:pageblockbuttons>
+        <apex:pageblocksection title="account" columns="1" rendered="{! !isnull(accounts)}">
+<apex:datatable value="{!accounts}" var="a" rules="all" border="box" width="800px" columnswidth="200px,100px,200px,150px,150px" cellpadding="5px">
+                <apex:column value="{!a.name}" headervalue="account name"/>
+            <apex:column value="{!a.industry}" headervalue="industry"/>
+                <apex:column value="{!a.id}" headervalue="id"/>
+                <apex:column value="{!a.phone}" headervalue="phone"/>
+                <apex:column value="{!a.rating}" headervalue="rating"/>
+            </apex:datatable>
+        </apex:pageblocksection>
+        
+        </apex:pageblock>
+    
+    </apex:form>
+</apex:page>

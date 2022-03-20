@@ -1,0 +1,32 @@
+<apex:page controller="schemafinalexample">
+    <apex:form >
+    <apex:pageblock title="final">
+        <apex:pageBlockSection columns="1"> 
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="objects"/>
+                <apex:selectList value="{!objselected}"  size="1"> 
+                <apex:selectOptions value="{!objects}">
+                    </apex:selectOptions>
+                </apex:selectList>
+            </apex:pageBlockSectionItem>
+    </apex:pageBlockSection>
+        <apex:pageBlockSection columns="1"> 
+            <apex:panelGrid columns="3" >
+            <apex:selectList multiselect="true" value="{!add}" style="width:150px;height:200px;">  
+                <apex:selectOptions value="{!leftside}"/>
+                </apex:selectList>
+                <apex:panelGrid columns="1" >
+                    <br/>
+                    <apex:commandButton value="add"  action="{!addele}" />
+                    <br/>
+                    <br/>
+                    <apex:commandButton value="del" action="{!removeele}"/>
+                </apex:panelGrid>
+                <apex:selectList multiselect="true"   value="{!removed}" style="width:150px;height:200px;">  
+                <apex:selectOptions value="{!rightside}"/>
+                </apex:selectList>
+            </apex:panelGrid>
+        </apex:pageBlockSection>        
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

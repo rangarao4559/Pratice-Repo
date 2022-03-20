@@ -1,0 +1,5 @@
+<apex:page >
+    <c:capital empname="satish" salary="10000" bgcolor="yellow" color="red"/>
+        <c:capital empname="kiran" salary="16000" bgcolor="white" color="green"/>
+    <c:capital empname="hari" salary="14000" bgcolor="gray" color="black"/>
+</apex:page>

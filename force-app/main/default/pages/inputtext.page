@@ -1,0 +1,11 @@
+<apex:page >
+    <apex:form >
+        inputText:<apex:inputText /><br/>
+        maxlength:<apex:inputText maxlength="3"/><br/>
+        max Size:<apex:inputText size="3"/><br/>
+        disabled:<apex:inputText disabled="false" /><br/>
+        rendered:<apex:inputText rendered="true"/><br/>
+        style:<apex:inputText style="background:yellow;color:red;" /><br/>
+        direction:<apex:inputText dir="rtl"/><br/>
+    </apex:form>
+</apex:page>

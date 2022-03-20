@@ -1,0 +1,8 @@
+<aura:component >
+    <aura:handler name="SourceComponent"  event="c:compevent" 
+                  action="{!c.handleEvent}" includeFacets="true" phase="bubble"/>
+    <div>
+          {!v.body}
+    </div>
+
+</aura:component>

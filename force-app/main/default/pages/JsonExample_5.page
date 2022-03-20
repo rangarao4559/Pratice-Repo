@@ -1,0 +1,7 @@
+<apex:page controller="json_example_5" >
+    <apex:pageBlock >
+        Integer:{!aval}<br/>
+        Account:{!acc.Name}<br/>
+    
+    </apex:pageBlock>
+</apex:page>

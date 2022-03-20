@@ -1,0 +1,14 @@
+<apex:page >
+    <apex:form >
+        <apex:pageBlock title="Employee" >
+        <apex:pageBlockSection >
+                <apex:outputLabel value="Enter Name" />
+                <apex:inputText />
+                <apex:outputLabel value="Enter Age" />
+                <apex:inputText />
+                <apex:outputLabel value="Enter Salary" />
+                <apex:inputText />
+                </apex:pageBlocksection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

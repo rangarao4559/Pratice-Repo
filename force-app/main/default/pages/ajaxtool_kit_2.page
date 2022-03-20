@@ -1,0 +1,22 @@
+<apex:page id="page">
+    <script src="/soap/ajax/44.0/connection.js" type="text/javascript">
+        </script>
+    <script>
+    function invoke(){
+        sforce.connection.sessionId='{!GETSESSIONID()}';
+         var query="select id,name from Account where industry='Energy'";
+        var queryResult=sforce.connection.query(query);
+        var mylist=queryResult.getArray('records');
+        var result='';
+        for(i=0;i<mylist.length;i++){
+            result=result+'<br/>'+mylist[i].Name;
+            }
+        document.getElementById('page:fm:res').innerhtml=result;
+        }
+      
+    </script>
+    <apex:form id="fm">
+        <apex:commandbutton value="submit" oncomplete="invoke()"/>
+        <apex:outputlabel id="res"/>
+    </apex:form>
+        </apex:page>

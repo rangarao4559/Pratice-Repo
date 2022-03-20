@@ -1,0 +1,39 @@
+<!--<apex:page controller="Datatable_example" >
+    <br/>
+     <apex:dataTable value="{!accounts}" var="o" width="800px" columnsWidth="250px,150px,150px,150px" frame="box" rules="hls" cellpadding="5px">
+        <apex:column value="{!o.name}" headervalue="Accountname"/>
+         <apex:column value="{!o.phone}" headervalue="phone"/>
+         <apex:column value="{!o.industry}" headervalue="industry"/>
+         <apex:column value="{!o.rating}" headervalue="rating"/>
+    </apex:dataTable>
+</apex:page>-->
+<apex:page controller="Datatable_example" sidebar="false">
+   <!-- rules : rows,cols,all
+		frame : border,box,lhs,rhs,vlines,hlines,below,top,
+		cellPadding:
+		width
+		align
+		columnwidth
+		rowclass
+		headederClass
+	-->
+    <br/><br/>
+    <style>
+    	.odd{
+        	background:#ECF0F1;
+        }
+        .even{
+        	background:#FDFEFE;
+        }
+        .head{
+        	background:#7B7D7D;
+        }
+    </style>
+    <apex:dataTable value="{!accounts}" var="a" align="center" width="800px" rowClasses="even,odd" headerClass="head" columnsWidth="250px,150px,150px,150px" frame="border" rules="rows"  cellpadding="5px">
+        <apex:column value="{!a.Name}" headerValue="Account Name" />
+        <apex:column value="{!a.Industry}" headerValue="Industry"/>
+        <apex:column value="{!a.Phone}" headerValue="Phone"/>
+        <apex:column value="{!a.Rating}" headerValue="Rating"/>
+    </apex:dataTable>
+    
+</apex:page>

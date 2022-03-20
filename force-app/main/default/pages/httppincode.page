@@ -1,0 +1,18 @@
+<apex:page controller="httppincode">
+     <apex:form >
+        
+    <apex:inputText value="{!cityname}"/>
+        <apex:commandButton value="search" action="{!invoke}" />
+    <apex:pageBlock >
+    <apex:pageBlockTable value="{!resmap}" var="d" >
+        <apex:column value="{!d}" headervalue="property" />
+             <apex:column value="{!resmap[d]}" headervalue="value" />
+        </apex:pageBlockTable>
+{!result}
+        
+         </apex:pageBlock>
+         {!pincode}<br/><br/>
+             
+       
+    </apex:form>
+</apex:page>

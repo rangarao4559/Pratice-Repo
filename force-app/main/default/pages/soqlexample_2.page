@@ -1,0 +1,11 @@
+<apex:page controller="soql_example2">
+    <apex:pageBlock title="contact">
+    <apex:pageBlocktable value="{!contacts}" var="a">
+        <apex:column value="{!a.lastname}"/>
+        <apex:column value="{!a.firstname}"/>
+   <apex:column value="{!a.phone}"/>
+        </apex:pageBlocktable>
+    
+    </apex:pageBlock>
+    
+</apex:page>

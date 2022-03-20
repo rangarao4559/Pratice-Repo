@@ -1,0 +1,13 @@
+<apex:page id="page">
+    <apex:form id="fm">
+        <script>
+        	function show(){
+            	var name =document.getElementById('page:fm:pb:name').value;
+                alert(name);
+            }
+        </script>
+    	<apex:pageBlock title="Employee" id="pb">
+            Enter Name : <apex:inputText id="name" onchange="show()"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,25 @@
+<apex:page id="page">
+    <apex:form id="fm">
+    	<apex:pageBlock title="Employee" id="pb">
+             <script>
+                	function show(){
+                    	var name=document.getElementById('page:fm:pb:pbs:pbsi1:name').value;
+                        var age =document.getElementById('{!$Component.pbs.pbsi2.age}').value;
+                        alert('name:'+name+' :age'+age);
+                    }
+                </script>
+        	<apex:pageBlockSection id="pbs">
+               
+            	<apex:pageBlockSectionItem id="pbsi1">
+                    <apex:outputLabel value="Enter Name" />
+                    <apex:inputText id="name" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="pbsi2">
+                    <apex:outputLabel value="Enter Age" />
+                    <apex:inputText id="age" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:commandButton value="Submit" onclick="show()" />
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

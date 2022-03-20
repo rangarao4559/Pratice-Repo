@@ -1,0 +1,16 @@
+<apex:page controller="integrationdynamicstring3" >
+      <apex:form >
+         <apex:inputText value="{!searchtext}" />
+ 
+            <apex:commandButton value="submit" action="{!search}" reRender="one" />
+      
+                                                    
+        <apex:outputLabel value="{!result}" id="one" ></apex:outputLabel>
+        
+       
+        
+        
+        
+
+    </apex:form>
+</apex:page>

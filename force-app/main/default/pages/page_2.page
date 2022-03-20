@@ -1,0 +1,27 @@
+<apex:page controller="example_2" >
+    <apex:form >
+    <apex:pageblock title="account">
+     <apex:selectList size="1"   value="{!selected}" >
+            <apex:selectOption itemLabel="none"  itemValue="none" />
+             <apex:selectOption itemLabel="one" itemValue="1" />
+             <apex:selectOption itemLabel="two" itemValue="2" />
+             <apex:selectOption itemLabel="three" itemValue="3" />
+             <apex:selectOption itemLabel="four" itemValue="4"/>
+             <apex:selectOption itemLabel="five" itemValue="5"/>
+        </apex:selectList>
+      <apex:commandButton value="save" action="{!create}"/>
+        <apex:pageBlockTable value="{!acc}" var="g" >
+            <apex:column value="{!g}" />
+            <apex:column value="{!g.name}" />
+        </apex:pageBlockTable>
+                           
+        
+   
+        
+        
+        
+        </apex:pageblock>
+    
+    
+    </apex:form>
+</apex:page>

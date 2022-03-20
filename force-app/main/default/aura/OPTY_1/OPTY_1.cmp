@@ -1,0 +1,14 @@
+<aura:component controller="OPTY_1">
+    <aura:attribute name="oppty" type="Opportunity[]" />
+    |<lightning:input label="stageName" aura:id="opty" />
+    <lightning:button label="submit" onclick="{!c.call}" />
+    <table><tr><th>id</th><th>name</th><th>stagename</th><th>closedate</th></tr>
+        <aura:iteration items="oppty"  var="g" >
+            
+           <tr><td>{!g.Id}</td>
+               <td>{!g.Name}</td>
+               <td>{!g.StageName}</td>
+               <td>{!g.CloseDate}</td></tr>
+        </aura:iteration>
+         </table>
+</aura:component>

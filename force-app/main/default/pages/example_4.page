@@ -1,0 +1,38 @@
+<apex:page controller="example_4">
+    <apex:form >
+        
+        <apex:pageBlock title="summary">
+            <apex:pageBlockbuttons location="top">
+            <apex:commandButton value="calculate" action="{!calculate}"/>
+             </apex:pageBlockbuttons>
+        <apex:pageblocksection title="formula" columns="1">
+            <apex:pageBlocksectionitem >
+                <apex:outputlabel value="entervalue of A"/>
+                <apex:inputtext value="{!a}"/>
+         </apex:pageBlocksectionitem>
+            <apex:pageBlocksectionitem >
+                <apex:outputlabel value="entervalue of B"/>
+                <apex:inputtext value="{!b}" />
+         </apex:pageBlocksectionitem>
+            <apex:pageBlocksectionitem >
+                <apex:outputlabel value="pointer"/>
+                <apex:selectlist size="1" value="{!operation}" >
+                    <apex:selectoption itemlabel="add" itemvalue="add"/>
+                    <apex:selectoption itemlabel="sub" itemvalue="sub"/>
+                    <apex:selectoption itemlabel="mul" itemvalue="mul"/>
+                </apex:selectlist>
+                
+         </apex:pageBlocksectionitem>
+            <apex:pageBlocksectionitem >
+                <apex:outputlabel value="Result C"/>
+                <apex:inputtext value="{!c}" />
+         </apex:pageBlocksectionitem>
+                       
+                        
+            </apex:pageblocksection>
+        
+        </apex:pageBlock>
+    
+    
+    </apex:form>
+</apex:page>

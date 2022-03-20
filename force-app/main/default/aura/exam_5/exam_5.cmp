@@ -1,0 +1,52 @@
+<aura:component >
+	<lightning:card title="account" >
+    <p>line one</p>
+     <p>line two</p>
+    </lightning:card>
+    <lightning:card title="account"  iconName="standard:address" >
+    <p>line one</p>
+     <p>line two</p>
+    </lightning:card>
+     <lightning:card title="account"  iconName="standard:address" footer="testing" >
+    <p>line one</p>
+     <p>line two</p>
+    </lightning:card>
+     <lightning:card title="account"  iconName="standard:address"  >
+    <p>line one</p>
+     <p>line two</p>
+         <aura:set attribute="footer" >
+             <lightning:button label="submit" />
+             <lightning:button  label="cancel"/>
+         
+         </aura:set>
+    </lightning:card>
+    <lightning:card title="account"  iconName="standard:address"  >
+    <p>line one</p>
+     <p>line two</p>
+         <aura:set attribute="footer" >
+             <lightning:button label="submit" />
+             <lightning:button  label="cancel"/>
+         
+         </aura:set>
+        <aura:set attribute="actions" >
+            <lightning:button label="submit" />
+        
+ <lightning:button  label="cancel"/>
+        </aura:set>
+    </lightning:card>
+     <lightning:card title="account"  iconName="standard:address"  >
+    <p>line one</p>
+     <p>line two</p>
+         <aura:set attribute="footer" >
+             <lightning:button label="submit" />
+             <lightning:button  label="cancel"/>
+         </aura:set>
+        
+         <aura:set attribute="title" >
+             <div>
+         <h1>ranga</h1>
+         <h2>sai</h2>
+                 </div>
+         </aura:set>
+    </lightning:card>
+</aura:component>

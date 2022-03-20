@@ -1,0 +1,6 @@
+<aura:component >
+    <aura:attribute name="names" type="string" default="ramu" />
+    <aura:iteration items="{!v.names}" var="a" >
+        <p><br>{!a}</br></p>
+    </aura:iteration>
+</aura:component>

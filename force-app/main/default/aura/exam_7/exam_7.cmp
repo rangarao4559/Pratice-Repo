@@ -1,0 +1,17 @@
+<aura:component > 
+    <div class="box">
+    <lightning:card title="account" iconName="standard:account" >
+     <lightning:input label="enterAge" type="number" />
+     <lightning:input label="enterCity" type="text"  variant="label-hidden" />
+    <lightning:input label="active" type="checkbox"  />
+    <lightning:input label="status" type="toggle" />
+    <lightning:input label="enterSalary" type="number" placeholder="enter salary" />
+    </lightning:card>
+        <aura:set attribute="actions" >
+            <lightning:button label="submit" />
+            <lightning:button label="cancel"/>
+            
+        
+        </aura:set>
+    </div>
+</aura:component>

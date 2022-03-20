@@ -1,0 +1,5 @@
+<apex:page controller="custom_comp_example">
+    <c:list_data records="{!accounts}" fields="{!accfields}"/>
+    <br/><br/>
+    <c:list_data records="{!contacts}" fields="{!confields}"/>
+</apex:page>

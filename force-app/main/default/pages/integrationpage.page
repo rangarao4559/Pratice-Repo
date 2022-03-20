@@ -1,0 +1,35 @@
+<apex:page controller="apex_class_4">
+ 
+    <apex:form >
+        <!-- <apex:pageBlock title="Json_example_2">
+      <apex:pageBlockButtons location="top">
+       <apex:commandButton value="submit" action="{!create}" rerender="one"/>
+       </apex:pageBlockButtons>
+       <apex:pageBlockSection >
+       <apex:inputText value="{!acc.name}"/>
+       <apex:inputText value="{!acc.Phone}"/>
+       <apex:inputText value="{!acc.Rating}"/>
+           <apex:inputText value="{!acc.Industry}"/>
+      </apex:pageBlockSection>
+       <apex:outputLabel value="{!result}" id="one" />
+       
+        
+        
+        
+        
+        </apex:pageBlock>-->
+  <!--  <apex:pageblock>
+        <apex:pageBlockTable value="{!result}" var="a">
+        <apex:column value="{!a}"/>
+            <apex:column value="{!result[a]}"/>
+        </apex:pageBlockTable>
+        
+        
+        </apex:pageblock>-->
+        <apex:pageBlock >
+            Integer:{!aval}<br/>
+            account:{!acc.Name}
+        
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

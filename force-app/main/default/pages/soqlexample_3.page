@@ -1,0 +1,21 @@
+<apex:page controller="soql_example_3" >
+    <apex:form >
+    <apex:pageblock title="account" id="pb">
+        <apex:pageBlockButtons location="top" >
+            <apex:commandbutton value="NAMEASC" action="{!nameASC}" rerender="pb"/>
+         <apex:commandbutton value="NAMEDESC" action="{!nameDESC}" rerender="pb"/>
+         <apex:commandbutton value="PHONEASC" action="{!phoneASC}" rerender="pb"/>
+        </apex:pageBlockButtons>
+        <apex:pageblocktable value="{!accounts}" var="a">
+            <apex:column value="{!a.name}" />
+             <apex:column value="{!a.phone}" />
+             <apex:column value="{!a.name}" />
+<apex:column value="{!a.id}" />
+        </apex:pageblocktable>
+        
+        
+        </apex:pageblock>
+    
+    
+    </apex:form>
+</apex:page>

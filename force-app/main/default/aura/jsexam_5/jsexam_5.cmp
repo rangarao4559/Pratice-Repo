@@ -1,0 +1,11 @@
+<aura:component >
+    <aura:attribute name="amount" type="decimal" />
+     <aura:attribute name="rate" type="decimal" />
+     <aura:attribute name="interst" type="decimal" />
+     <aura:attribute name="years" type="decimal" />
+    <aura:handler name="init" value="{!this}" action="{!c.calculate}" />
+    amount:{!v.amount}<br/>
+    rate:{!v.rate}<br/>
+    interst:{!v.interst}<br/>
+    years:{!v.years}
+</aura:component>

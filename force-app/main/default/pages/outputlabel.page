@@ -1,0 +1,4 @@
+<apex:page >
+    <apex:outputLabel value="Employee Name" /> <br/><br/>
+    <apex:outputLabel >Employee Age </apex:outputLabel>
+</apex:page>
